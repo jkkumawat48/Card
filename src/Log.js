@@ -1,39 +1,23 @@
 import React,{useState} from "react";
-import './log.css';
+import Login from './Login';
 function Log(){
-    const[data,setData]=useState([{
-        Sr:1,
-        Name:"Rahul",
-        Status:"Active"
+    const[user,SetUser]=useState([{
+        image:"https://picsum.photos/200/300?random=1",
+        id:1,
+        price:250
     },{
-        Sr:2,
-        Name:"Vimal",
-        Status:"UnActive" 
-    },{
-        Sr:3,
-        Name:"Kartush Saini",
-        Status:"Active" 
+        image:"https://i.pinimg.com/736x/b5/0e/b2/b50eb2600af54a03c3c2f00c58ad633f.jpg",
+        id:2,
+        price:250
     }])
     return(
-        <div className="App">
-            <table>
-                <tr>
-                    <th>Sr</th>
-                    <th>Name</th>
-                    <th>Active</th>
-                </tr>
-                {
-                    data.map((key,val)=>{
-                        return(
-                            <tr>
-                                <td>{key.Sr}</td>
-                                <td>{key.Name}</td>
-                                <td>{key.Status}</td>
-                            </tr>
-                        )
-                    })
-                }
-            </table>
+        <div>
+    {
+        user.map((vel,ind)=>{
+            
+            return <Login user={vel}/>
+        })
+    }
         </div>
     )
 }
